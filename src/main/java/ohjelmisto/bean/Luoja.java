@@ -13,5 +13,5 @@ public interface Luoja {
 
     public abstract void setNimi(String nimi);
 
-    
+
 }
