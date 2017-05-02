@@ -1,10 +1,13 @@
 package ohjelmisto.controller;
 
+import ohjelmisto.bean.Kysely;
 import ohjelmisto.ohjelmisto.dao.KyselyDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by bferr on 2.5.2017.
