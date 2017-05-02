@@ -9,13 +9,13 @@ public class LuojaImpl implements Luoja{
 
     private int id;
 
-    @Size(min = 1, max = 40)
+    @Size(min = 1, max = 100)
     private String nimi;
 
-    @Size(min = 1, max = 255)
+    @Size(min = 1, max = 100)
     private String sposti;
 
-    @Size(min = 6, max = 100)
+    @Size(min = 6, max = 20)
     private String salasana;
 
     public int getId() {

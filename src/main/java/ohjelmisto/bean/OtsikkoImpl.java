@@ -9,7 +9,7 @@ public class OtsikkoImpl implements Otsikko {
 
     private int id;
 
-    @Size(min = 1, max = 255)
+    @Size(min = 1, max = 100)
     private String nimi;
 
     public int getId() {
