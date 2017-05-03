@@ -29,9 +29,9 @@ public class KyselySpring implements KyselyDAO {
 
     public void lisaaKysely(Kysely k){
 
-        final String sql = "insert into kysely(nimi, luojanimi) values(?)";
+        final String sql = "insert into kysely(nimi, luoja_id) values(?)";
         final String nimi = k.getNimi();
-        final String luojanimi = k.getLuojaNimi();
+        final int luoja_id = k.getId();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
 
@@ -39,7 +39,7 @@ public class KyselySpring implements KyselyDAO {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
                 pre.setString(1, nimi);
-                pre.setString(1, luojanimi);
+                pre.setString(1, luoja_id);
                 return pre;
             }
         }, idHolder);

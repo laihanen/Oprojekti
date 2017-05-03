@@ -12,4 +12,8 @@ public interface Kysymys {
     public abstract String getKysymysteksti();
 
     public abstract void setKysymysteksti(String kysymysteksti);
+
+    public abstract String getOtsikko();
+
+    public abstract void setOtsikko(String otsikko);
 }
