@@ -2,9 +2,9 @@ INSERT INTO luoja (nimi, sposti, salasana)
 VALUES
 ('Jorma Testaaja', 'jormatestaaja@joku.fi', 'salasana1234');
 
-INSERT INTO kysely (nimi)
+INSERT INTO kysely (nimi, luoja_id)
 VALUES
-('Kyselyn lähtökohtana on tutkia Haaga-Helia ammattikorkeakoulun opiskelijoiden kouluviihtyvyyttä ja sen kehittämistä');
+('Kyselyn lähtökohtana on tutkia Haaga-Helia ammattikorkeakoulun opiskelijoiden kouluviihtyvyyttä ja sen kehittämistä', 1);
 
 INSERT INTO otsikko (nimi)
 VALUES
@@ -12,18 +12,24 @@ VALUES
 
 INSERT INTO kysymystyyppi (nimi)
 VALUES
-('Yksi valinta');
+('Yksi valinta')
+('Monta valintaa')
+('Tekstivastaus');
 
-INSERT INTO kysymys (kysymysteksti)
+INSERT INTO kysymys (kysymysteksti, kysely_id, otsikko_id, kysymystyyppi_id)
 VALUES
-('Sukupuoli');
+('Sukupuoli', 1, 1, 1);
 
-INSERT INTO vaihtoehto(nimi)
+INSERT INTO vaihtoehto(nimi, kysymys_id)
 VALUES
-('N'),
-('M'),
-('Muu');
+('N', 1),
+('M', 1),
+('Muu', 1);
 
-INSERT INTO vastaus(avointekstivastuas)
+INSERT INTO vastaus(avointekstivastaus, kysymys_id)
 VALUES
-('');
+(NULL, 1);
+
+INSERT INTO vaihtoehtoVastaus(vastaus_id, vaihtoehto_id)
+VALUES
+(1,2);

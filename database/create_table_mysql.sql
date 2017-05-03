@@ -1,14 +1,14 @@
 CREATE TABLE luoja (
 	id INT NOT NULL AUTO_INCREMENT,
 	nimi VARCHAR(100) NOT NULL,
-	sposti VARCHAR(100) NOT NULL,
+	sposti VARCHAR(200) NOT NULL,
 	salasana VARCHAR(20) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE kysely (
 	id INT NOT NULL AUTO_INCREMENT,
-	nimi VARCHAR(100) NOT NULL,
+	nimi VARCHAR(300) NOT NULL,
 	luoja_id INT,
     PRIMARY KEY (id),
     FOREIGN KEY (luoja_id) REFERENCES luoja(id)
@@ -16,7 +16,7 @@ CREATE TABLE kysely (
 
 CREATE TABLE otsikko (
     id INT NOT NULL AUTO_INCREMENT,
-    nimi VARCHAR(100),
+    nimi VARCHAR(200),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
@@ -28,7 +28,7 @@ CREATE TABLE kysymystyyppi (
 
 CREATE TABLE kysymys (
     id INT NOT NULL AUTO_INCREMENT,
-    kysymysteksti VARCHAR(200),
+    kysymysteksti VARCHAR(300),
     kysely_id INT,
     otsikko_id INT,
     kysymystyyppi_id INT,
@@ -48,7 +48,7 @@ CREATE TABLE vaihtoehto(
 
 CREATE TABLE vastaus(
     id INT NOT NULL AUTO_INCREMENT,
-    avointekstivastaus VARCHAR(300),
+    avointekstivastaus VARCHAR(500),
     kysymys_id INT,
     PRIMARY KEY (id),
     FOREIGN KEY (kysymys_id) REFERENCES kysymys(id)
