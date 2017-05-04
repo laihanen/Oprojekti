@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "sql" uri = "http://java.sun.com/jsp/jstl/sql" %>
 <!doctype html>
 <html>
 <head>
@@ -79,7 +80,7 @@
     });
     $('.hamburger').click(function() {
         $('.hamburger').toggleClass('is-active');
-        $('#nav ul').toggle( "fast" );
+        $('#nav').find('ul').toggle( "fast" );
         $('#menu').toggle( "fade", "fast" );
     });
 </script>
