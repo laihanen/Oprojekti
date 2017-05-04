@@ -12,9 +12,9 @@ import java.sql.SQLException;
  */
 public class KysymysRowMapper implements RowMapper<Kysymys> {
 
-    public Kysymys mapRow(ResultSet rs, int rowNum) throws SQLException
+    public Kysymys mapRow(ResultSet rs, int rowNum) throws SQLException {
         Kysymys k = new KysymysImpl();
         k.setId(rs.getInt("id"));
-        k.setNimi(rs.getString("nimi"));
-        return k;
+        k.setKysymysteksti(rs.getString("nimi"));
+        return k; }
 }

@@ -18,7 +18,7 @@ import java.util.List;
  * Created by bferr on 3.5.2017.
  */
 @Repository
-public class KyselySpring implements KyselyDAO {
+public abstract class KyselySpring implements KyselyDAO {
 
     @Inject
     public JdbcTemplate jdbcTemplate;
@@ -39,7 +39,7 @@ public class KyselySpring implements KyselyDAO {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
                 pre.setString(1, nimi);
-                pre.setString(1, luoja_id);
+                pre.setInt(1, luoja_id);
                 return pre;
             }
         }, idHolder);
@@ -54,15 +54,20 @@ public class KyselySpring implements KyselyDAO {
         return;
     }
 
+    public List<Kysely> haeKysely(int id) {
+        return null;
+    }
 
-    public List<Kysely> haeOmat(String luojaNimi){
+    public List<Kysely> haeOmat(String luojaNimi) {
         String sql = "select * from kysely where luojanimi = ?";
         Object[] parametrit = new Object[] {luojaNimi};
         RowMapper<Kysely> mapper = new KyselyRowMapper();
         List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);
 
         return kyselyt;
+
     }
+
 
 
     public List<Kysely> haeKaikki(){

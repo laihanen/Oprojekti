@@ -54,11 +54,11 @@ public class KysymysSpring implements KysymysDAO{
         return;
     }
 
-    public List<Kysymys> haeKaikki(){
-
+    public List<Kysymys> haekaikki() {
         String sql = "select id, otsikko, kysymysteksti from kysymys";
         RowMapper<Kysymys> mapper = new KysymysRowMapper();
         List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
         return kysymykset;
     }
+
 }

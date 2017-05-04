@@ -20,6 +20,14 @@ public class OtsikkoImpl implements Otsikko {
         this.id = id;
     }
 
+    public String getOtsikko() {
+        return null;
+    }
+
+    public void setOtsikko(String otsikko) {
+
+    }
+
     public String getNimi() {
         return nimi;
     }
