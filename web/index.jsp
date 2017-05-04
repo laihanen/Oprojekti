@@ -12,5 +12,7 @@
   </head>
   <body>
   <h1>ook sää kipee</h1>
+  <h2><a href="kysymykset.json">kysymykset.json</a></h2>
+  <h2><a href="kysymykset">kysymykset</a></h2>
   </body>
 </html>

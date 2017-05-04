@@ -25,7 +25,7 @@ public class KysymysController {
     }
     @RequestMapping("kysymykset")
     public String lisaaKysymys() {
-        return "kysymys/kysymyslista";
+        return "kys/kysymyslista";
 
     }
 }
