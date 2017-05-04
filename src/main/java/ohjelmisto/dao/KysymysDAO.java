@@ -1,6 +1,7 @@
-package ohjelmisto.ohjelmisto.dao;
+package ohjelmisto.dao;
 
 import ohjelmisto.bean.Kysymys;
+
 import java.util.List;
 
 /**

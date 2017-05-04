@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 /**
  * Created by bferr on 2.5.2017.
  */
-public class LuojaImpl implements Luoja{
+public class LuojaImpl implements Luoja {
 
     private int id;
 

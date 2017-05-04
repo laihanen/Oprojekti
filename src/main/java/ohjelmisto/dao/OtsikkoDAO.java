@@ -1,4 +1,4 @@
-package ohjelmisto.ohjelmisto.dao;
+package ohjelmisto.dao;
 
 import ohjelmisto.bean.Otsikko;
 

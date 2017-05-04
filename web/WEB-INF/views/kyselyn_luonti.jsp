@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix = "sql" uri = "http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!doctype html>
 <html>
 <head>
@@ -9,7 +9,8 @@
     <title>Kyselyn luonti</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="<c:url value="/resources/css/hamburgers.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 </head>
@@ -67,21 +68,23 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 <script src="<c:url value="/resources/js/scrolloverflow.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.fullPage.min.js" />"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#fullpage').fullpage({
             anchors: ['firstPage', 'secondPage', 'thirdPage'],
             scrollOverflow: true,
             menu: '#menu'
         });
     });
-    $('.hamburger').click(function() {
+    $('.hamburger').click(function () {
         $('.hamburger').toggleClass('is-active');
-        $('#nav').find('ul').toggle( "fast" );
-        $('#menu').toggle( "fade", "fast" );
+        $('#nav').find('ul').toggle("fast");
+        $('#menu').toggle("fade", "fast");
     });
 </script>
 </body>

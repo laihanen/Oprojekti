@@ -1,4 +1,4 @@
-package ohjelmisto.ohjelmisto.dao;
+package ohjelmisto.dao;
 
 import ohjelmisto.bean.Kysely;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,11 +23,11 @@ public abstract class KyselySpring implements KyselyDAO {
     @Inject
     public JdbcTemplate jdbcTemplate;
 
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void lisaaKysely(Kysely k){
+    public void lisaaKysely(Kysely k) {
 
         final String sql = "insert into kysely(nimi, luoja_id) values(?)";
         final String nimi = k.getNimi();
@@ -46,11 +46,11 @@ public abstract class KyselySpring implements KyselyDAO {
         k.setId(idHolder.getKey().intValue());
     }
 
-    public void poista(int id){
+    public void poista(int id) {
 
         String sql = "delete from kysely where id = ?";
         jdbcTemplate.update(sql, id);
-        System.out.println("Deleted Record with ID = " + id );
+        System.out.println("Deleted Record with ID = " + id);
         return;
     }
 
@@ -60,7 +60,7 @@ public abstract class KyselySpring implements KyselyDAO {
 
     public List<Kysely> haeOmat(String luojaNimi) {
         String sql = "select * from kysely where luojanimi = ?";
-        Object[] parametrit = new Object[] {luojaNimi};
+        Object[] parametrit = new Object[]{luojaNimi};
         RowMapper<Kysely> mapper = new KyselyRowMapper();
         List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);
 
@@ -69,8 +69,7 @@ public abstract class KyselySpring implements KyselyDAO {
     }
 
 
-
-    public List<Kysely> haeKaikki(){
+    public List<Kysely> haeKaikki() {
         String sql = "select * from kysely";
         RowMapper<Kysely> mapper = new KyselyRowMapper();
         List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);

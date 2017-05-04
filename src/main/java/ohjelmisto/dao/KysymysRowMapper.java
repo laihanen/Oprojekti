@@ -1,4 +1,4 @@
-package ohjelmisto.ohjelmisto.dao;
+package ohjelmisto.dao;
 
 import ohjelmisto.bean.Kysymys;
 import ohjelmisto.bean.KysymysImpl;
@@ -16,5 +16,6 @@ public class KysymysRowMapper implements RowMapper<Kysymys> {
         Kysymys k = new KysymysImpl();
         k.setId(rs.getInt("id"));
         k.setKysymysteksti(rs.getString("nimi"));
-        return k; }
+        return k;
+    }
 }

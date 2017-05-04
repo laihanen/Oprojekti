@@ -1,4 +1,4 @@
-package ohjelmisto.ohjelmisto.dao;
+package ohjelmisto.dao;
 
 import ohjelmisto.bean.Kysymys;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,16 +18,16 @@ import java.util.List;
  * Created by bferr on 3.5.2017.
  */
 @Repository
-public class KysymysSpring implements KysymysDAO{
+public class KysymysSpring implements KysymysDAO {
 
     @Inject
     public JdbcTemplate jdbcTemplate;
 
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void lisaaKysymys(Kysymys t){
+    public void lisaaKysymys(Kysymys t) {
 
         final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
         final String otsikko = t.getOtsikko();
@@ -46,11 +46,11 @@ public class KysymysSpring implements KysymysDAO{
         t.setId(idHolder.getKey().intValue());
     }
 
-    public void poista(int id){
+    public void poista(int id) {
 
         String sql = "delete from kysymys where id = ?";
         jdbcTemplate.update(sql, id);
-        System.out.println("Deleted Record with ID = " + id );
+        System.out.println("Deleted Record with ID = " + id);
         return;
     }
 

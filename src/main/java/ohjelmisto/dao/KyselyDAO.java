@@ -1,4 +1,4 @@
-package ohjelmisto.ohjelmisto.dao;
+package ohjelmisto.dao;
 
 import ohjelmisto.bean.Kysely;
 
@@ -18,4 +18,6 @@ public interface KyselyDAO {
     public abstract List<Kysely> haeOmat();
 
     public abstract List<Kysely> haeKaikki();
+
+    List<Kysely> haeKysely();
 }
