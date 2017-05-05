@@ -1,7 +1,7 @@
 package ohjelmisto.controller;
 
 import ohjelmisto.bean.Kysely;
-import ohjelmisto.ohjelmisto.dao.KyselyDAO;
+import ohjelmisto.dao.KyselyDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

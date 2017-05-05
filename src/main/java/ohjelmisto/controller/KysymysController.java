@@ -1,7 +1,7 @@
 package ohjelmisto.controller;
 
 import ohjelmisto.bean.Kysymys;
-import ohjelmisto.ohjelmisto.dao.KysymysDAO;
+import ohjelmisto.dao.KysymysDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
