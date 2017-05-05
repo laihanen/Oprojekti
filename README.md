@@ -16,4 +16,4 @@ Feedbackkyselyn (ja rajapinnan) kautta voi tehdä ainakin seuraavia asioita:
 
 IntelliJ IDEA 2017.1.2
 
-Apache TomCat 8.5.14
+Apache TomCat 8.0.21
