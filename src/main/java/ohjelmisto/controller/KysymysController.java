@@ -1,6 +1,7 @@
 package ohjelmisto.controller;
 
 import ohjelmisto.bean.Kysymys;
+import ohjelmisto.dao.KyselyDAO;
 import ohjelmisto.dao.KysymysDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,14 @@ public class KysymysController {
 
     @Inject
     KysymysDAO dao;
+
+    public KysymysDAO getDao() {
+        return dao;
+    }
+
+    public void setDao(KysymysDAO dao) {
+        this.dao = dao;
+    }
 
     @RequestMapping("kysymykset.json")
     public @ResponseBody List<Kysymys> haeKysymyksetJSON()

@@ -55,7 +55,7 @@ public class KysymysSpring implements KysymysDAO{
     }
 
     public List<Kysymys> haekaikki() {
-        String sql = "select id, otsikko, kysymysteksti from kysymys";
+        String sql = "select * from kysymys";
         RowMapper<Kysymys> mapper = new KysymysRowMapper();
         List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
         return kysymykset;
