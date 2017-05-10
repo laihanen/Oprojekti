@@ -1,11 +1,11 @@
 package ohjelmisto.controller;
 
 import ohjelmisto.bean.Kysely;
+import ohjelmisto.bean.KyselyImpl;
 import ohjelmisto.dao.KyselyDAO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value="/secure")
-public classKyselyController {
+public class classKyselyController {
 
     @Inject
     KyselyDAO dao;
