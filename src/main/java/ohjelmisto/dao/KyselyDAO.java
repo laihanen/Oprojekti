@@ -17,6 +17,5 @@ public interface KyselyDAO {
 
     public abstract List<Kysely> haeOmat();
 
-
     public abstract List<Kysely> haeKaikki();
 }

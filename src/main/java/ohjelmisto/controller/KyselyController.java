@@ -28,7 +28,7 @@ public class KyselyController {
         this.dao = dao;
     }
 
-    @RequestMapping (value="id", method = RequestMethod.GET)
+    /*    @RequestMapping (value="id", method = RequestMethod.GET)
     public String getCreateForm(Model model){
         Kysely tyhjaKysely = new KyselyImpl();
         tyhjaKysely.setNimi("oletusnimi");
@@ -48,8 +48,8 @@ public class KyselyController {
         model.addAttribute("kysely", kysely);
         return "secure/view";
     }
-
-   /* @RequestMapping ("kyselyt.json")
+    */
+    @RequestMapping ("kyselyt.json")
     public @ResponseBody List<Kysely> haeKyselytJSON () {
         List<Kysely> kyselyt = dao.haeKaikki();
         return kyselyt;
@@ -59,6 +59,6 @@ public class KyselyController {
     public String naytaKyselyt() {
         return "kyselyt/kyselylista";
     }
-    */
+
 }
 
