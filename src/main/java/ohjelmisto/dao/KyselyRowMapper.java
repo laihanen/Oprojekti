@@ -13,10 +13,10 @@ import java.sql.SQLException;
 public class KyselyRowMapper implements RowMapper<Kysely> {
 
     public Kysely mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Kysely m = new KyselyImpl();
-        m.setId(rs.getInt("id"));
-        m.setNimi(rs.getString("nimi"));
+        Kysely k = new KyselyImpl();
+        k.setId(rs.getInt("id"));
+        k.setNimi(rs.getString("nimi"));
 
-        return m;
+        return k;
     }
 }

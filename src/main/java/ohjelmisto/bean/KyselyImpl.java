@@ -28,6 +28,8 @@ public class KyselyImpl implements Kysely {
         this.nimi = nimi;
     }
 
+
+
     @Override
     public String toString() {
         return "KyselyImpl{" +
