@@ -18,7 +18,7 @@ import java.util.List;
  * Created by bferr on 3.5.2017.
  */
 @Repository
-public abstract class KyselySpring implements KyselyDAO {
+public class KyselySpring implements KyselyDAO {
 
     @Inject
     public JdbcTemplate jdbcTemplate;
@@ -55,6 +55,10 @@ public abstract class KyselySpring implements KyselyDAO {
     }
 
     public List<Kysely> haeKysely(int id) {
+        return null;
+    }
+
+    public List<Kysely> haeOmat() {
         return null;
     }
 
