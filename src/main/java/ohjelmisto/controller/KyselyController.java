@@ -4,6 +4,7 @@ import ohjelmisto.bean.Kysely;
 import ohjelmisto.dao.KyselyDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
@@ -14,7 +15,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value="/secure")
-public class KyselyController {
+public classKyselyController {
 
     @Inject
     KyselyDAO dao;
@@ -26,7 +27,7 @@ public class KyselyController {
     public void setDao(KyselyDAO dao) {
         this.dao = dao;
     }
-/*
+
     @RequestMapping (value="id", method = RequestMethod.GET)
     public String getCreateForm(Model model){
         Kysely tyhjaKysely = new KyselyImpl();
@@ -47,9 +48,8 @@ public class KyselyController {
         model.addAttribute("kysely", kysely);
         return "secure/view";
     }
-    */
 
-    @RequestMapping ("kyselyt.json")
+   /* @RequestMapping ("kyselyt.json")
     public @ResponseBody List<Kysely> haeKyselytJSON () {
         List<Kysely> kyselyt = dao.haeKaikki();
         return kyselyt;
@@ -59,5 +59,6 @@ public class KyselyController {
     public String naytaKyselyt() {
         return "kyselyt/kyselylista";
     }
+    */
 }
 
