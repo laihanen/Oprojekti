@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value="/secure")
-public class classKyselyController {
+public class KyselyController {
 
     @Inject
     KyselyDAO dao;
