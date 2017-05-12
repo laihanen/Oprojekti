@@ -39,7 +39,6 @@ public class OtsikkoSpring implements OtsikkoDAO {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
                 pre.setString(1, nimi);
-                pre.setInt(1, luoja_id);
                 return pre;
             }
         }, idHolder);
