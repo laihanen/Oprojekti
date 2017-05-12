@@ -21,7 +21,7 @@
     <mvc:annotation-driven />
 
     <!-- Forwards requests to the "/" resource to the "index" view -->
-    <mvc:view-controller path="/" view-name="kyselyn_vastaaminen" />
+    <mvc:view-controller path="/" view-name="welcome" />
 
     <!-- location of static content (images, js and css files) -->
     <mvc:resources mapping="/resources/**" location="/resources/" />

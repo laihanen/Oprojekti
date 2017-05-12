@@ -14,7 +14,7 @@ import java.util.List;
  * Created by bferr on 2.5.2017.
  */
 @Controller
-@RequestMapping(value="/secure")
+
 public class KyselyController {
 
     @Inject
