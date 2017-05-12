@@ -29,8 +29,8 @@ public class OtsikkoSpring implements OtsikkoDAO {
 
     public void lisaaOtsikko(Otsikko o) {
 
-        final String sql = "insert into otsikko(nimi, luoja_id) values(?)";
-        final String nimi = o.getNimi();
+        final String sql = "insert into otsikko(otsikko) values(?)";
+        final String otsikko = o.getOtsikko();
         final int luoja_id = o.getId();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
@@ -38,8 +38,7 @@ public class OtsikkoSpring implements OtsikkoDAO {
         jdbcTemplate.update(new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
-                pre.setString(1, nimi);
-                pre.setInt(1, luoja_id);
+                pre.setString(1, otsikko);
                 return pre;
             }
         }, idHolder);
