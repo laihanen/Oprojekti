@@ -25,7 +25,7 @@ public class VastausController {
 
     public void setDao(VastausDAO dao){this.dao = dao;}
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value ="lisaavastaus.json", method = RequestMethod.POST)
     public Vastaus lisaaVastaus(@RequestBody Vastaus vastaus){
         return vastaus;
     }
