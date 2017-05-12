@@ -5,13 +5,13 @@ package ohjelmisto.bean;
  */
 public interface Vastaus {
 
-    public  int getId();
+    public abstract int getId();
 
-    public  void setId(int id);
+    public abstract void setId(int id);
 
-    public  String getAvointeksti();
+    public abstract String getAvointeksti();
 
-    public  void setAvointeksti(String avointeksti);
+    public abstract void setAvointeksti(String avointeksti);
 
 
 }
