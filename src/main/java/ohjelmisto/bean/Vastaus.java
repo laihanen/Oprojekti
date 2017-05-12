@@ -9,9 +9,9 @@ public interface Vastaus {
 
     public abstract void setId(int id);
 
-    public abstract String getAvointeksti();
+    public abstract String getAvointekstivastaus();
 
-    public abstract void setAvointeksti(String avointeksti);
+    public abstract void setAvointekstivastaus(String avointekstivastaus);
 
 
 }

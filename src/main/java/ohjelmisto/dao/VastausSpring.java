@@ -26,15 +26,15 @@ public class VastausSpring implements VastausDAO {
 
     public void lisaaVastaus(Vastaus v) {
 
-        final String sql = "insert into vastaus(avointeksti) values(?)";
-        final String avointeksti = v.getAvointeksti();
+        final String sql = "insert into vastaus(avointekstivastaus) values(?)";
+        final String avointekstivastaus = v.getAvointekstivastaus();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
-                pre.setString(1, avointeksti);
+                pre.setString(1, avointekstivastaus);
                 return pre;
             }
         }, idHolder);

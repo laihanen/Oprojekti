@@ -17,7 +17,7 @@ public class VastausRowMapper implements RowMapper<Vastaus> {
     public Vastaus mapRow(ResultSet rs, int rowNum) throws SQLException{
         Vastaus v = new VastausImpl();
         v.setId(rs.getInt("id"));
-        v.setAvointeksti(rs.getString("avointeksti"));
+        v.setAvointekstivastaus(rs.getString("avointekstivastaus"));
         return v;
     }
 

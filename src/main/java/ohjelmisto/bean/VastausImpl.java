@@ -3,11 +3,11 @@ package ohjelmisto.bean;
 /**
  * Created by bferr on 2.5.2017.
  */
-public class VastausImpl {
+public class VastausImpl implements Vastaus {
 
     private int id;
 
-    private String avointeksti;
+    private String avointekstivastaus;
 
     public int getId() {
         return id;
@@ -17,19 +17,19 @@ public class VastausImpl {
         this.id = id;
     }
 
-    public String getAvointeksti() {
-        return avointeksti;
+    public String getAvointekstivastaus() {
+        return avointekstivastaus;
     }
 
-    public void setAvointeksti(String avointeksti) {
-        this.avointeksti = avointeksti;
+    public void setAvointekstivastaus(String avointekstivastaus) {
+        this.avointekstivastaus = avointekstivastaus;
     }
 
     @Override
     public String toString() {
         return "VastausImpl{" +
                 "id=" + id +
-                ", avointeksti='" + avointeksti + '\'' +
+                ", avointekstivastaus='" + avointekstivastaus + '\'' +
                 '}';
     }
 }
