@@ -3,6 +3,7 @@ package ohjelmisto.dao;
 import ohjelmisto.bean.Vastaus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
@@ -10,6 +11,7 @@ import javax.inject.Inject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 
 public class VastausSpring implements VastausDAO {
@@ -39,6 +41,25 @@ public class VastausSpring implements VastausDAO {
 
     }
 
+
+    public poista(int id) {
+
+
+        String sql = "delete from vastaus where id = ?";
+        jdbcTemplate.update(sql, id);
+        System.out.println("Deleted Record with ID = " + id);
+        return;
+
     }
 
-}
+
+    public List<Vastaus> haeKaikki() {
+        String sql ="SELECT * FROM vastaus";
+        RowMapper<Vastaus> mapper = new VastausRowMapper();
+        List<Vastaus> vastaukset = jdbcTemplate.query(sql, mapper);
+        return vastaukset;
+    }
+
+    }
+
+
