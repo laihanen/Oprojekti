@@ -30,7 +30,7 @@ public class KysymysSpring implements KysymysDAO{
     public void lisaaKysymys(Kysymys t){
 
         // Pitää saada otsikko sisään kysymykseen
-        final String sql = "insert into kysymys(otsikko, kysymysteksti) values(id,?)";
+        final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
         final String otsikko = t.getOtsikko();
         final String teksti = t.getKysymysteksti();
 
