@@ -30,15 +30,14 @@ public class OtsikkoSpring implements OtsikkoDAO {
     public void lisaaOtsikko(Otsikko o) {
 
         final String sql = "insert into otsikko(otsikko) values(?)";
-        final String otsikko = o.getOtsikko();
-        final int luoja_id = o.getId();
+        final String nimi = o.getOtsikko();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
-                pre.setString(1, otsikko);
+                pre.setString(1, nimi);
                 return pre;
             }
         }, idHolder);
