@@ -24,7 +24,7 @@ public class VastausSpring implements VastausDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void lisaaVastaukset(Vastaus v) {
+    public void lisaaVastaus(Vastaus v) {
 
         final String sql = "insert into vastaus(avointeksti) values(?)";
         final String avointeksti = v.getAvointeksti();
@@ -43,7 +43,7 @@ public class VastausSpring implements VastausDAO {
     }
 
 
-    public poista(int id) {
+   /* public poista(int id) {
 
 
         String sql = "delete from vastaus where id = ?";
@@ -51,7 +51,7 @@ public class VastausSpring implements VastausDAO {
         System.out.println("Deleted Record with ID = " + id);
         return;
 
-    }
+    }*/
 
 
     public List<Vastaus> haeKaikki() {

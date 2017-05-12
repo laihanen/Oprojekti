@@ -1,9 +1,11 @@
 package ohjelmisto.dao;
 
+
 import ohjelmisto.bean.Vastaus;
 import ohjelmisto.bean.VastausImpl;
+import org.springframework.jdbc.core.RowMapper;
 
-import javax.swing.tree.RowMapper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -18,4 +20,5 @@ public class VastausRowMapper implements RowMapper<Vastaus> {
         v.setAvointeksti(rs.getString("avointeksti"));
         return v;
     }
+
 }

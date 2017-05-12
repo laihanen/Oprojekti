@@ -11,7 +11,7 @@ public interface VastausDAO {
 
         public abstract void lisaaVastaus(Vastaus vastaus);
 
-        public abstract void poista(int id);
+        /*public abstract void poista(int id);*/
 
         public abstract List<Vastaus> haeKaikki();
 
