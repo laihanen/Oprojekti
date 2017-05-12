@@ -28,5 +28,7 @@ public class VastausController {
         List<Vastaus> vastaukset = dao.haeKaikki();
         return vastaukset;
     }
+
+
 }
 
