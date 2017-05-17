@@ -29,7 +29,15 @@ public class KysymysSpring implements KysymysDAO{
 
     public void lisaaKysymys(Kysymys t){
 
-        // Pitää saada otsikko sisään kysymykseen
+        /* Pitää saada otsikko sisään kysymykseen
+            SELECT p.productid, p.name, p.price, COUNT(pv.viewid) AS totalviews, COUNT(s.salesid) AS totalsales
+            FROM Products p
+            LEFT JOIN Sales s ON s.productid = p.productid
+            LEFT JOIN ProductViews pv ON pv.productid = p.productid
+            GROUP BY p.productid, p.name, p.price
+
+            Ehkä toimisi tuollaisella pohjalla?
+         */
         final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
         final String otsikko = t.getOtsikko();
         final String teksti = t.getKysymysteksti();
