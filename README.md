@@ -1,5 +1,9 @@
 # Ohjelmistoprojekti-1
 
+* [Git workflow ohje](http://nvie.com/posts/a-successful-git-branching-model/)
+* [Git flow](https://github.com/nvie/gitflow)
+
+
 # Pakolliset vaatimukset arvostelun osalla
 Feedbackkyselyn (ja rajapinnan) kautta voi tehdä ainakin seuraavia asioita:
 
