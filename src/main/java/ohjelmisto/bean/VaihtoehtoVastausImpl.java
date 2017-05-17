@@ -19,5 +19,11 @@ public class VaihtoehtoVastausImpl implements VaihtoehtoVastaus {
 
     public void setVastaus_id(int vastaus_id){this.vastaus_id = vastaus_id;}
 
-
+    @Override
+    public String toString() {
+        return "VaihtoehtoVastausImpl{" +
+                "Vaihtoehto_id=" + vaihtoehto_id +
+                ", Vastaus_id='" + vastaus_id + '\'' +
+                '}';
+    }
 }
