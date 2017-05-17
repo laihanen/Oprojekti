@@ -15,7 +15,7 @@ public class OtsikkoRowMapper implements RowMapper<Otsikko> {
     public Otsikko mapRow(ResultSet rs, int rowNum) throws SQLException{
         Otsikko o = new OtsikkoImpl();
         o.setId(rs.getInt("id"));
-        o.setOtsikko(rs.getString("otsikko"));
+        o.setNimi(rs.getString("nimi"));
         return o;
     }
 }

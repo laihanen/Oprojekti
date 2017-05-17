@@ -13,7 +13,11 @@ public interface Kysymys {
 
     public abstract void setKysymysteksti(String kysymysteksti);
 
-    public abstract String getOtsikko();
+   /* public abstract String getOtsikko();
 
     public abstract void setOtsikko(String otsikko);
+    */
+    public abstract void setOtsikko(Otsikko otsikko);
+
+    public abstract Otsikko getOtsikko();
 }

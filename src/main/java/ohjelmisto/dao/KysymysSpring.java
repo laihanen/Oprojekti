@@ -1,6 +1,7 @@
 package ohjelmisto.dao;
 
 import ohjelmisto.bean.Kysymys;
+import ohjelmisto.bean.Otsikko;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
@@ -27,9 +28,10 @@ public class KysymysSpring implements KysymysDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /*
     public void lisaaKysymys(Kysymys t){
 
-        /* Pitää saada otsikko sisään kysymykseen
+         Pitää saada otsikko sisään kysymykseen
             SELECT p.productid, p.name, p.price, COUNT(pv.viewid) AS totalviews, COUNT(s.salesid) AS totalsales
             FROM Products p
             LEFT JOIN Sales s ON s.productid = p.productid
@@ -37,9 +39,9 @@ public class KysymysSpring implements KysymysDAO{
             GROUP BY p.productid, p.name, p.price
 
             Ehkä toimisi tuollaisella pohjalla?
-         */
+
         final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
-        final String otsikko = t.getOtsikko();
+        final Otsikko otsikko = t.getOtsikko();
         final String teksti = t.getKysymysteksti();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
@@ -54,7 +56,7 @@ public class KysymysSpring implements KysymysDAO{
         }, idHolder);
         t.setId(idHolder.getKey().intValue());
     }
-
+    */
     public void poista(int id){
 
         String sql = "delete from kysymys where id = ?";
@@ -64,10 +66,22 @@ public class KysymysSpring implements KysymysDAO{
     }
 
     public List<Kysymys> haekaikki() {
-        String sql = "select * from kysymys";
+        String sql = "SELECT kysymys.id, kysymys.kysymysteksti, kysymys.otsikko_id, otsikko.nimi FROM kysymys INNER JOIN otsikko ON kysymys.otsikko_id = otsikko.id;";
         RowMapper<Kysymys> mapper = new KysymysRowMapper();
         List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
         return kysymykset;
     }
+
+     /* Pitää saada otsikko sisään kysymykseen
+            SELECT p.productid, p.name, p.price, COUNT(pv.viewid) AS totalviews, COUNT(s.salesid) AS totalsales
+            FROM Products p
+            LEFT JOIN Sales s ON s.productid = p.productid
+            LEFT JOIN ProductViews pv ON pv.productid = p.productid
+            GROUP BY p.productid, p.name, p.price
+
+            Ehkä toimisi tuollaisella pohjalla?
+         */
+
+
 
 }

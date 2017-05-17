@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface KysymysDAO {
 
-    public abstract void lisaaKysymys(Kysymys kysymys);
+   /* public abstract void lisaaKysymys(Kysymys kysymys); */
 
     public abstract void poista(int id);
 

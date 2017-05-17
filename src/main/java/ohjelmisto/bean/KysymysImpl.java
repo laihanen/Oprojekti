@@ -10,7 +10,7 @@ public class KysymysImpl implements Kysymys {
     private int id;
 
     @Size(min = 1, max = 255)
-    private String otsikko;
+    private Otsikko otsikko;
 
     @Size(min = 1, max = 200)
     private String kysymysteksti;
@@ -23,11 +23,11 @@ public class KysymysImpl implements Kysymys {
         this.id = id;
     }
 
-    public String getOtsikko() {
+    public Otsikko getOtsikko() {
         return otsikko;
     }
 
-    public void setOtsikko(String otsikko) {
+    public void setOtsikko(Otsikko otsikko) {
         this.otsikko = otsikko;
     }
 

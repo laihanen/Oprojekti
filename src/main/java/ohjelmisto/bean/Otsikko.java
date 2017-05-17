@@ -9,7 +9,7 @@ public interface Otsikko {
 
     public abstract void setId(int id);
 
-    public abstract String getOtsikko();
+    public abstract String getNimi();
 
-    public abstract void setOtsikko(String otsikko);
+    public abstract void setNimi(String nimi);
 }

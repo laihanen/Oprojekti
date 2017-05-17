@@ -30,7 +30,7 @@ public class OtsikkoSpring implements OtsikkoDAO {
     public void lisaaOtsikko(Otsikko o) {
 
         final String sql = "insert into otsikko(otsikko) values(?)";
-        final String nimi = o.getOtsikko();
+        final String nimi = o.getNimi();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
 

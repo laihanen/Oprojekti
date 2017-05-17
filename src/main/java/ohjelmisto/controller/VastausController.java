@@ -1,6 +1,7 @@
 package ohjelmisto.controller;
 
 import ohjelmisto.bean.Vastaus;
+import ohjelmisto.bean.VastausImpl;
 import ohjelmisto.dao.VastausDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +27,10 @@ public class VastausController {
     public void setDao(VastausDAO dao){this.dao = dao;}
 
     @RequestMapping(value ="lisaavastaus.json", method = RequestMethod.POST)
-    public Vastaus lisaaVastaus(@RequestBody Vastaus vastaus){
+    public @ResponseBody Vastaus lisaaVastaus(@RequestBody VastausImpl vastaus){
+        System.out.println();
+       dao.lisaaVastaus(vastaus);
+
         return vastaus;
     }
 
